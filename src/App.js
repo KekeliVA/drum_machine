@@ -13,6 +13,25 @@ function App() {
     setTimeout(() => setPlaying(false), 200);
   };
 
+  const handleKeyPress = (keyPress) => {
+    /* capture the input of the keydown event from user , 
+    this is handle through the useEffect. Here we establish
+    the event listener, the type of event, and the function
+    in which to pass the event*/
+    // call handlePlay function
+    
+    console.log(keyPress);
+    // compare keydown to the drumState keycode
+    keyPress.keyCode === state.keyCode && handlePlay(keyPress.keyCode)
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    }
+  }, []);
+  
   return (
     <>
       <DrumMachine>
@@ -36,7 +55,10 @@ function App() {
       </DrumMachine>
     </>
   );
+  
+
 }
+
 
 const DrumMachine = styled.div`
   display: flex;

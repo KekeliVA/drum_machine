@@ -21,8 +21,9 @@ function App() {
     // call handlePlay function
     
     console.log(keyPress);
+    console.log(state.keyCode);
     // compare keydown to the drumState keycode
-    keyPress.keyCode === state.keyCode && handlePlay(keyPress.keyCode)
+    // keyPress.keyCode === state.keyCode ? handlePlay(keyPress) : null
   }
 
   useEffect(() => {
@@ -45,6 +46,7 @@ function App() {
                 key={drum.keyCode}
                 letter={drum.key}
                 onClick={(e) => handlePlay(drum.keyCode)}
+                // keydown={(e) => handlePlay(drum.keyCode)}
               >
                 {drum.key}
                 <audio src={drum.audio} id={drum.keyCode}></audio>

@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     height: 100vh;
-    background-color: rgb(100, 120, 200);
+    background-color: #fff;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;

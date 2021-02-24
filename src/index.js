@@ -13,10 +13,6 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
     background-color: #fff;
     font-family: 'Montserrat', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
